@@ -1,0 +1,24 @@
+class Solution {
+    public int maxWater(int arr[]) {
+        int n=arr.length;
+        int maxwater=0;
+        int lp=0;
+        int rp=n-1;
+        while(lp<rp){
+            int ht=Math.min(arr[lp],arr[rp]);
+            int ith=rp-lp;
+            int cur=ht*ith;
+            maxwater=Math.max(maxwater,cur);
+            if(arr[lp]<arr[rp]){
+                lp++;
+            }
+            else
+            {
+                rp--;
+            }
+        }
+        return maxwater;
+    }
+}
+TC:O(n)
+SC:O(1)
