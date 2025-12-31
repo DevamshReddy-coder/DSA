@@ -1,0 +1,27 @@
+import java.util.*;
+
+public class Solution {
+
+    public static boolean pairSum1(ArrayList<Integer> list, int target) {
+
+        Collections.sort(list);
+
+        int lp = 0;
+        int rp = list.size() - 1;
+
+        while (lp < rp) {
+
+            int sum = list.get(lp) + list.get(rp);
+
+            if (sum == target) {
+                return true;
+            }
+            else if (sum < target) {
+                lp++;   
+            }
+            else {
+                rp--;   
+            }
+        }
+        return false;
+    }
